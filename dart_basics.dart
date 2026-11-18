@@ -1,34 +1,57 @@
+
 // Student: Nafisa Ahmed Hassan Musa
 // Reg no: 25904
 const String regNo = '25904';
 final int d = int.parse(regNo[regNo.length - 1]);
 final int t = int.parse(regNo.substring(regNo.length - 2));
 
+int countVowels(String text) {
+  // by NAHM
+  text = text.toLowerCase();
+
+  int count = 0;
+  int i = 0;
+
+  while (i < text.length) {
+    if ('aeiou'.contains(text[i])) {
+      count++;
+    }
+    i++;
+  }
+
+  return count;
+}
+
+String initials(String fullName) {
+  // by NAHM
+  fullName = fullName.trim();
+
+  if (fullName.isEmpty) {
+    return '';
+  }
+
+  List<String> names = fullName.split(RegExp(r'\s+'));
+
+  String result = '';
+  int i = 0;
+
+  while (i < names.length) {
+    result += '${names[i][0].toUpperCase()}.';
+    i++;
+  }
+
+  return result;
+}
+
 void main() {
+  // by NAHM
   print('Reg no: $regNo | D = $d | T = $t');
 
-  // Part A
-  // A1
-  int a = 17;
-  int b = 5;
+  String fullName = 'Nafisa Ahmed Hassan Musa';
 
-  print(a / b);
-  print(a ~/ b);
-  print(a % b);
-  print(-a % b);
-  print(-a ~/ b);
-  print(-17.abs());
-  print(0.1 + 0.2 == 0.3);
-  print(10 == 10.0);
+  print('$fullName has ${countVowels(fullName)} vowels');
 
-  // Part A
-  // A2
-  int x = d;
-  int y = t;
-  var z = x * 2 + y ~/ 4;
-  z += x;
-
-  print(z);
-  print(z.isEven);
-  print('$z' + '$x');
+  print(initials('Nafisa Ahmed Hassan Musa'));
+  print(initials(' ana uwase '));
+  print(initials(' '));
 }
