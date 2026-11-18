@@ -38,7 +38,6 @@ String maskPhone(String phone) {
 
   return masked;
 }
-
 String formatRwf(int amount) {
   // by NAHM
 
@@ -155,8 +154,9 @@ void main() {
   print(isValidPin('4821'));
   print(isValidPin('48a21'));
   print(isValidPin('48214'));
-
+  
   int balance = 20000 + t * 500;
+  
 
   print('Starting balance: ${formatRwf(balance)}');
 

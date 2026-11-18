@@ -21,22 +21,37 @@ int countVowels(String text) {
 
   return count;
 }
-
+// by NAHM
 String initials(String fullName) {
-  // by NAHM
+  // First version: caused a RangeError
+  /*
+  List<String> parts = fullName.split(' ');
+
+  String result = '';
+  int i = 0;
+
+  while (i < parts.length) {
+    result += '${parts[i][0].toUpperCase()}.';
+    i++;
+  }
+
+  return result;
+  */
+
+  // Fixed version
   fullName = fullName.trim();
 
   if (fullName.isEmpty) {
     return '';
   }
 
-  List<String> names = fullName.split(RegExp(r'\s+'));
+  List<String> parts = fullName.split(RegExp(r'\s+'));
 
   String result = '';
   int i = 0;
 
-  while (i < names.length) {
-    result += '${names[i][0].toUpperCase()}.';
+  while (i < parts.length) {
+    result += '${parts[i][0].toUpperCase()}.';
     i++;
   }
 
@@ -70,6 +85,7 @@ void main() {
 
   print(initials('Nafisa Ahmed Hassan Musa'));
   print(initials(' ana uwase '));
+  print(initials('  ana   uwase '));
   print(initials(' '));
 
   drawTriangle(d + 3);
