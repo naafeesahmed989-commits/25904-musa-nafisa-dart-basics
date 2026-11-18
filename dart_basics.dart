@@ -43,6 +43,23 @@ String initials(String fullName) {
   return result;
 }
 
+void drawTriangle(int height) {
+  // by NAHM
+  int row = 1;
+
+  while (row <= height) {
+    int spaces = height - row;
+    String symbol = row.isOdd ? '*' : '#';
+
+    String indentation = ''.padLeft(spaces);
+    String symbols = List.filled(row, symbol).join();
+
+    print('$indentation$symbols');
+
+    row++;
+  }
+}
+
 void main() {
   // by NAHM
   print('Reg no: $regNo | D = $d | T = $t');
@@ -54,4 +71,8 @@ void main() {
   print(initials('Nafisa Ahmed Hassan Musa'));
   print(initials(' ana uwase '));
   print(initials(' '));
+
+  drawTriangle(d + 3);
+  drawTriangle(0);
+  drawTriangle(-2);
 }
