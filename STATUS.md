@@ -16,6 +16,7 @@
  - C5: drawTriangle() function implemented and tested.
  - D1: Function scope, parameters, and VAT trace completed.
  - D2: MoMo receipt printer implemented and tested.
+ - Part E: Grade and palindrome functions debugged, corrected, and documented.
 ## In progress
  - Part D: Loops and control flow.
 
